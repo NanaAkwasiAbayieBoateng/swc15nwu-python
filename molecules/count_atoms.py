@@ -1,4 +1,7 @@
+import sys
+
 def count_atom(filename, atom_type):
+    """Count the number of a type of atom in a PDB file"""
     try:
         input_file = open(filename)
     except IOError as ex:
@@ -13,4 +16,11 @@ def count_atom(filename, atom_type):
                     atom_count = atom_count + 1
     return atom_count
 
-print count_atom('methane.pdb', 'H')
+length = len(sys.argv)
+num_arguments = length - 1
+if num_arguments == 2:
+    filename = sys.argv[1]
+    atom_type = sys.argv[2]
+    print count_atom(filename, atom_type)
+else:
+    print "Error: I expected 2 command line arguments, got", num_arguments
