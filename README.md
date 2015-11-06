@@ -7,3 +7,4 @@ Notebook name      | Section
 -------------------|---------
 Inflammation.ipynb | [Analyzing patient data](http://swcarpentry.github.io/python-novice-inflammation/01-numpy.html)
 Loops.ipynb        | [Repeating actions with loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop.html)
+Lists.ipynb        | [Storing multiple values in lists](http://swcarpentry.github.io/python-novice-inflammation/03-lists.html)
