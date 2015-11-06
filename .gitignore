@@ -58,3 +58,6 @@ target/
 
 # Ignore IPython notebook checkpoints
 .ipynb_checkpoints/
+
+# Ignore the scratch space
+Scratch.ipynb
