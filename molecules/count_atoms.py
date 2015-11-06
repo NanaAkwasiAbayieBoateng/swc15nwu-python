@@ -6,6 +6,7 @@ def count_atom(filename, atom_type):
         input_file = open(filename)
     except IOError as ex:
         print 'I got an error when opening', filename, ':', ex.strerror
+        return None
     else:
         atom_count = 0
         for line in input_file:
@@ -14,13 +15,17 @@ def count_atom(filename, atom_type):
                 fields = line.split()
                 if fields[2] == atom_type:
                     atom_count = atom_count + 1
-    return atom_count
+        return atom_count
 
 length = len(sys.argv)
 num_arguments = length - 1
 if num_arguments == 2:
     filename = sys.argv[1]
     atom_type = sys.argv[2]
-    print count_atom(filename, atom_type)
+    atom_count = count_atom(filename, atom_type)
+    if atom_count is not None:
+        print atom_count
 else:
-    print "Error: I expected 2 command line arguments, got", num_arguments
+    print "Error: expected 2 command line arguments, got", num_arguments
+    sys.exit(1)
+
